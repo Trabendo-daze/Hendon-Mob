@@ -1,7 +1,6 @@
 
 
 # Library Loading/Introductory Information ---------------------------------------------
-#test change
 
 library(rvest) #for html scraping
 library(stringr) #for string manipulation
@@ -343,7 +342,7 @@ compile_hendon_summaries <- function(n){
 
 # Creating and saving CSVs ------------------------------------------------
 
-hendon_summary_csv <- compile_hendon_summaries(1000)
+hendon_summary_csv <- compile_hendon_summaries(6000)
 
 write_csv(hendon_summary_csv, path = "hendon_summaries.csv")
 
@@ -387,3 +386,4 @@ buy_in_df <- buy_in_df %>%
 average_buy_in <- mean(buy_in_df$buy_in_usd, na.rm = TRUE)
 
 
+#if buy-in for an event is 0, delete that row in calculation. 

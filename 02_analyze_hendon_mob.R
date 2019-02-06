@@ -218,6 +218,34 @@ average_live_earnings_plot + geom_bar(stat = "identity", fill = "aquamarine4", c
 #Probably something about the entire population about the specific differences 
 #between quartiles - how do these categories/players differ
 
+#Rmarkdown - no code just graphs/text
+
+#Entire Population
+#How many players total?
+#How many players in this sample?
+#Average Earnings?
+#Distribution of earnings?
+#Distribution of countries in the sample?
+#Average earnings per country?
+#Average number of years played in the sample?
+#Average number of cashes?
+#Average buy-in?/Average buy-in distribution
+
+#Between Quartiles
+#Average earnings diffserences/distributional differences - Interpretation
+#Countries cashed differences
+#Average buy-in differences
+#Average amount of time played?
+#Average binks/cash? (do high stakes players just get lucky to get there?)
+#Average amount of countries played in?
+#Average time between cash? (who plays more often?)
+
+
+#Summary section about differences
+
+
+#
+
 
 # Distribution of total earnings ------------------------------------------
 
