@@ -289,8 +289,9 @@ make_hendon_summary <- function(url){
   
   #if buy-in is greater than or equal to cash, then buy-in = 1/10 of cash
   
-  
-  average_buy_in <- mean(buy_in_df$buy_in_usd, na.rm = TRUE)
+  list_of_buy_ins <- buy_in_df$buy_in_usd
+  non_zero_buy_ins <- list_of_buy_ins[!list_of_buy_ins %in% 0]
+  average_buy_in <- mean(non_zero_buy_ins)
   
   bink_threshold <- 20 * average_buy_in
   
@@ -357,7 +358,7 @@ write_csv(hendon_summary_csv, path = "hendon_summaries.csv")
 
 
 
-url <- "http://pokerdb.thehendonmob.com/player.php?a=r&n=64849"
+url <- "http://pokerdb.thehendonmob.com/player.php?a=r&n=33360"
 
 url <- read_html(url)
 

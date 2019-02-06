@@ -26,13 +26,14 @@ hendon_summaries_df <- hendon_summaries_df %>%
   mutate(years_played = round((last_date - first_date)/365.25,2)) %>%
   mutate(average_time_btwn_cash = round((last_date - first_date)/number_of_cashes), 2) %>%
   mutate(average_time_btwn_cash = as.numeric(average_time_btwn_cash)) %>%
+  mutate(number_of_binks = replace(number_of_binks, average_buy_in == 0, 0)) %>%
   mutate(binks_proportion = round(number_of_binks/number_of_cashes * 100, 2)) %>%
   select(name = new_name, nationality = new_nationality, average_buy_in, 
          number_of_cashes, sum_of_cashes, average_cash, average_placement, number_of_binks,
          binks_proportion, number_of_countries_cashed, first_date, last_date, years_played, 
          average_time_btwn_cash, unique_views) %>%
   arrange(desc(sum_of_cashes)) %>%
-  mutate(quantile = ntile(sum_of_cashes, 4)) 
+  mutate(quartile = ntile(sum_of_cashes, 4)) 
 
 #average time between cash interpreted as "he has a cash once every X days on average"
 
