@@ -293,6 +293,8 @@ make_hendon_summary <- function(url){
   non_zero_buy_ins <- list_of_buy_ins[!list_of_buy_ins %in% 0]
   average_buy_in <- mean(non_zero_buy_ins)
   
+  #don't count 0 buy-ins in the average buy-in number
+  
   bink_threshold <- 20 * average_buy_in
   
   number_of_binks <- sum(cashes > bink_threshold, na.rm = TRUE)
@@ -346,8 +348,6 @@ compile_hendon_summaries <- function(n){
 hendon_summary_csv <- compile_hendon_summaries(6000)
 
 write_csv(hendon_summary_csv, path = "hendon_summaries.csv")
-
-
 
 # Testing Section ---------------------------------------------------------
 
