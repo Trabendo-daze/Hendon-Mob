@@ -384,3 +384,46 @@ average_buy_in_plot +
   theme(plot.title = element_text(hjust = 0.5)) 
 
 
+# Quartile - Bink Proportion ----------------------------------------------
+
+first_hendon_mob_quantile_for_binks <- first_hendon_mob_quantile %>%
+  filter(average_buy_in > 0)
+
+first_hendon_mob_quantile_bink_p <- mean(first_hendon_mob_quantile_for_binks$binks_proportion)
+
+second_hendon_mob_quantile_for_binks <- second_hendon_mob_quantile %>%
+  filter(average_buy_in > 0)
+
+second_hendon_mob_quantile_bink_p <- mean(second_hendon_mob_quantile_for_binks$binks_proportion)
+
+third_hendon_mob_quantile_for_binks <- third_hendon_mob_quantile %>%
+  filter(average_buy_in > 0)
+
+third_hendon_mob_quantile_bink_p <- mean(third_hendon_mob_quantile_for_binks$binks_proportion)
+
+fourth_hendon_mob_quantile_for_binks <- fourth_hendon_mob_quantile %>%
+  filter(average_buy_in > 0)
+
+fourth_hendon_mob_quantile_bink_p <- mean(fourth_hendon_mob_quantile_for_binks$binks_proportion)
+
+bink_vec <- c(first_hendon_mob_quantile_bink_p ,        
+              second_hendon_mob_quantile_bink_p,
+              third_hendon_mob_quantile_bink_p, 
+              fourth_hendon_mob_quantile_bink_p)
+
+bink_df <- tibble(quartile = seq(1:4), bink_p = bink_vec )
+
+bink_plot <- ggplot(bink_df, aes(quartile, bink_p))
+
+bink_plot +
+  theme_bw() +
+  geom_bar(stat = "identity", col = "red", fill = "steelblue") +
+  labs(x = "Quartile", y = "Bink Proportion", title = "Bink Proportion per Quartile", 
+       caption = "Source: The Hendon Mob") + 
+  theme(plot.title = element_text(hjust = 0.5)) 
+
+
+# Quartile - Regression ---------------------------------------------------
+
+
+
