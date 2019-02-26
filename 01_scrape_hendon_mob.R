@@ -9,7 +9,7 @@ library(tidyverse) #for pipe usage/other miscellaneous functions, just good to h
 library(janitor)
 
 currency_conversion_df <- read_csv("currency_conversion.csv")
-#Exchange rates based on the end of 2017
+#Exchange rates based on end of 2017
 
 country_currency_mapping <- read_csv("country_currency_mapping.csv")
 country_currency_mapping <- country_currency_mapping %>%
