@@ -10,7 +10,7 @@ library(gridExtra) #for displaying plots nicely
 hendon_summaries_df <- read_csv("hendon_summaries.csv")
 
 #The following resolves some formatting issues with the data and creates extra 
-#necessary fields 
+#necessary fields.
 
 
 hendon_summaries_df <- hendon_summaries_df %>%
